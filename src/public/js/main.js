@@ -1,7 +1,5 @@
-$(document).ready(function(){
-   $('[data-toggle="offcanvas"]').click(function(){
-       $("#navigation").toggleClass("hidden-xs");
-   });
+$(document).ready(function() 
+{
+    $('select').material_select();
+
 });
-
-

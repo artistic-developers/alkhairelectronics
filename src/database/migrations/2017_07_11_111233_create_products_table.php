@@ -25,6 +25,10 @@ class CreateProductsTable extends Migration
             $table->string('model');
             $table->string('cost_price');
             $table->string('retail_price');
+            $table->string('nick');
+            $table->text('description');
+            $table->string('discount');
+            $table->integer('quantity')->default(0);
             $table->timestamps();
         });
     }

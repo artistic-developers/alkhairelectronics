@@ -6,5 +6,3 @@ Ali Rasheed (PHP LARAVEL)
 Hassaan Raza (HTML/CSS)
 
 To Do:
-View: Login (done)
-View: Home
