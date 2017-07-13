@@ -15,6 +15,7 @@
                     @endif
                     <form method="POST" action="{{ route('password.request') }}">
                         {{ csrf_field() }}
+                         <input type="hidden" name="token" value="{{ $token }}">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="email" name="email" type="email" class="validate" value="{{ $email or old('email') }}" required>
@@ -23,13 +24,13 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="password" type="password" class="validate" required>
+                                <input id="password" type="password" name="password" class="validate" required>
                                 <label for="Password">Password</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="confirmPassword" type="password" class="validate" required>
+                                <input id="confirmPassword" type="password" name="password_confirmation" class="validate" required>
                                 <label for="confirmPassword">Confirm Password</label>
                             </div>
                         </div>

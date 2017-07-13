@@ -29,6 +29,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('discount');
             $table->integer('quantity')->default(0);
+            $table->tinyInteger('is_deleted')->default(0);
             $table->timestamps();
         });
     }

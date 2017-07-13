@@ -43,6 +43,7 @@ class HomeController extends Controller
     {
         $products = Product::leftJoin('companies AS c', 'c.company_id','products.company_id')
             ->leftJoin('categories AS cat', 'cat.category_id', 'products.category_id')
+            ->where('is_deleted','=',0)
             ->paginate(20);
 
         return view('home.products.products', compact('products'));
@@ -196,6 +197,26 @@ class HomeController extends Controller
         else
         {
             return redirect()->to('/home');
+        }
+    }
+
+    public function delete_product($id = "")
+    {
+        $id = preg_replace('/ +/', ' ', preg_replace('/[^A-Za-z0-9\\-]/', ' ', urldecode(html_entity_decode(strip_tags($id)))));
+
+        $check_product = Product::where("product_id",'=',$id)
+            ->first();
+
+        if(count($check_product) == 1)
+        {
+            Product::where('product_id','=',$id)
+                ->update(['is_deleted'=>1]);
+
+            return redirect()->back()->with('status',"Product deleted");
+        }
+        else
+        {
+            return redirect()->back()->withErrors(['status'=>"Couldn't delete"]);
         }
     }
 

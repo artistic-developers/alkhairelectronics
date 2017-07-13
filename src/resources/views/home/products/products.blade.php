@@ -32,7 +32,8 @@ Products
             <th>Retail</th>
             <th>Category</th>
             @if(Auth::user()->type == "admin")
-            <th>Action</th>
+            <th>edit</th>
+            <th>delete</th>
             @endif
           </tr>
         </thead>
@@ -45,11 +46,14 @@ Products
             <td>{{ number_format($product->retail_price, 2) }}</td>
             <td>{{ $product->category_name }}</td>
             @if(Auth::user()->type == "admin")
-            <td><a class="waves-effect waves-light btn" href="/products/edit/{{ $product->product_id }}">edit</a></td>
+            <td><a class="btn-sm btn-success" href="/products/edit/{{ $product->product_id }}">edit</a></td>
+            <td><a class="btn-sm btn-danger" href="/products/delete/{{ $product->product_id }}">delete</a></td>
             @endif
+            </tr>
             @empty
             No products, yet.
             @endforelse
+            
           </tbody>
         </table>
       </div>

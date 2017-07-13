@@ -15,9 +15,9 @@
 <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+<link rel="stylesheet" href="../../../../../css/materialize.min.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+<script src="../../../../js/materialize.min.js"></script>
 <script src="../../../../js/main.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script>
@@ -113,7 +113,7 @@
                         @yield('side-nav')
                         <ul class="nav1">
                             <li>
-                                <a href="/">
+                                <a href="/users/">
                                     <i class="fa fa-users fa-lg"></i> Users Area
                                 </a>
                             </li>
